@@ -13,4 +13,10 @@ allow hal_camera_default media_data_file:file create_file_perms;
 
 allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
 
+#============= hal_camera_default ==============
+allow hal_camera_default default_prop:file { getattr open read };
+
+#!!!! This avc is allowed in the current policy
+allow hal_camera_default system_prop:file { getattr open read };
+
 set_prop(hal_camera_default, camera_prop)
